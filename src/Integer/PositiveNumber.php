@@ -2,13 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace ObjectValues;
+namespace ObjectValues\Integer;
 
 use ObjectValues\Integer\Exception\NotAPositiveNumber;
 
-class PositivNumber extends Integer
+class PositiveNumber extends Integer
 {
-    public static function create(int $integer): Integer
+    public static function create(int $integer): self
     {
         if (0 > $integer) {
             throw NotAPositiveNumber::NotANaturalNumberException($integer);

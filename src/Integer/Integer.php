@@ -2,7 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace ObjectValues;
+namespace ObjectValues\Integer;
+
+use ObjectValues\ValueObjectInterface;
 
 class Integer implements NumberInterface
 {
@@ -13,7 +15,7 @@ class Integer implements NumberInterface
         $this->integer = $integer;
     }
 
-    public static function create(int $integer): Integer
+    public static function create(int $integer): self
     {
         return new Integer($integer);
     }
@@ -29,10 +31,10 @@ class Integer implements NumberInterface
             return false;
         }
 
-        return $this->get() === $valueObject->get();
+        return $this->getNative() === $valueObject->getNative();
     }
 
-    public function get(): int
+    public function getNative(): int
     {
         return $this->integer;
     }
@@ -44,11 +46,11 @@ class Integer implements NumberInterface
 
     public function greaterThan(NumberInterface $number): bool
     {
-        return $this->integer > $number->get();
+        return $this->integer > $number->getNative();
     }
 
     public function lowerThan(NumberInterface $number): bool
     {
-        return $this->integer < $number->get();
+        return $this->integer < $number->getNative();
     }
 }

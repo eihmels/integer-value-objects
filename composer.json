@@ -1,0 +1,13 @@
+{
+    "name": "e.ihmels/php-value-objects",
+    "description": "some Value Objects",
+    "type": "libary",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Edzard Ihmels",
+            "email": "edzard-ihmels@web.de"
+        }
+    ],
+    "require": {}
+}

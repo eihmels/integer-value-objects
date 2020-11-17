@@ -2,9 +2,26 @@
 
 inspired by https://martinfowler.com/bliki/ValueObject.html
 
-This library bunch Value Objects.
-
+In this Package there are a bunch of Integer Value Objects with some validations.
 you can inherit this base Values to adapt it to your wishes.
+
+## ValueObjects
+
+all Value Objects Inherite from NumberInterface. In this Interface are some basic functions defined.
+take a look into src/NumberInterface.php.
+
+You are not allowed to change the values after initializing.
+
+### Basic Integer
+src/Integer.php
+
+example: 
+```
+    $one = Integer:create(1);
+```
+
+### Natural Number {\displaystyle \mathbb {N} _{0}}\mathbb {N} _{0}
+
 
 ## Codequality Tools
 run phpUnit

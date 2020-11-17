@@ -4,14 +4,18 @@ declare(strict_types=1);
 
 namespace ObjectValues;
 
-use ObjectValues\Exception\NullNotAllowedException;
+use ObjectValues\Exception\NotANaturalNumberException;
 
-class NaturalNumber extends PositiveNumber
+class NaturalNumber extends Integer
 {
     public static function create(int $integer, bool $withNull = false): self
     {
+        if (0 > $integer) {
+            throw NotANaturalNumberException::notANaturalNumberException($integer);
+        }
+
         if (false === $withNull && 0 === $integer) {
-            throw NullNotAllowedException::nullNotAllowedException();
+            throw NotANaturalNumberException::nullNotAllowedException();
         }
 
         return new self($integer);

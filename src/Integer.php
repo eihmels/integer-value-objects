@@ -33,15 +33,6 @@ class Integer implements NumberInterface
         return $this->integer < $number->native();
     }
 
-    public function identical(NumberInterface $number): bool
-    {
-        if (false === $number instanceof self) {
-            return false;
-        }
-
-        return $this->equals($number);
-    }
-
     public function equals(NumberInterface $valueObject): bool
     {
         return $this->native() === $valueObject->native();

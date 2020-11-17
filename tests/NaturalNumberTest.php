@@ -19,15 +19,8 @@ final class NaturalNumberTest extends TestCase
 
     public function testCreateNotAllowedNullNumber(): void
     {
-        $this->expectException(NotANaturalNumberException::class);
-        $this->expectExceptionMessage(NotANaturalNumberException::nullNotAllowedException()->getMessage());
-        NaturalNumber::create(0);
-    }
-
-    public function testCreateAllowedNullNumber(): void
-    {
         $this->expectNotToPerformAssertions();
-        NaturalNumber::create(0, true);
+        NaturalNumber::create(0);
     }
 
     public function testToString(): void

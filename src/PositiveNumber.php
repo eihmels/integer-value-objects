@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ObjectValues\Integer;
+namespace ObjectValues;
 
-use ObjectValues\Integer\Exception\NotAPositiveNumber;
+use ObjectValues\Exception\NotAPositiveNumber;
+use ObjectValues\Integer;
 
 class PositiveNumber extends Integer
 {

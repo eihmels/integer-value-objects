@@ -1,5 +1,5 @@
 {
-    "name": "e.ihmels/php-value-objects",
+    "name": "e.ihmels/integer-value-objects",
     "description": "some Value Objects",
     "type": "libary",
     "license": "MIT",

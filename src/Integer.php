@@ -2,10 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ObjectValues\Integer;
-
-use ObjectValues\NumberInterface;
-use ObjectValues\ValueObjectInterface;
+namespace ObjectValues;
 
 class Integer implements NumberInterface
 {
@@ -21,21 +18,21 @@ class Integer implements NumberInterface
         return new Integer($integer);
     }
 
-    public function notEquals(ValueObjectInterface $valueObject): bool
+    public function notEquals(NumberInterface $valueObject): bool
     {
         return false === $this->equals($valueObject);
     }
 
-    public function equals(ValueObjectInterface $valueObject): bool
+    public function equals(NumberInterface $valueObject): bool
     {
         if (false === $valueObject instanceof self) {
             return false;
         }
 
-        return $this->getNative() === $valueObject->getNative();
+        return $this->native() === $valueObject->native();
     }
 
-    public function getNative(): int
+    public function native(): int
     {
         return $this->integer;
     }
@@ -47,11 +44,21 @@ class Integer implements NumberInterface
 
     public function greaterThan(NumberInterface $number): bool
     {
-        return $this->integer > $number->getNative();
+        return $this->integer > $number->native();
     }
 
     public function lowerThan(NumberInterface $number): bool
     {
-        return $this->integer < $number->getNative();
+        return $this->integer < $number->native();
+    }
+
+    public function identical(NumberInterface $number): bool
+    {
+        if(false === $number instanceof self)
+        {
+            return false;
+        }
+
+        return $this->equals($number);
     }
 }

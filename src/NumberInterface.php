@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace ObjectValues;
 
-interface NumberInterface extends ValueObjectInterface
+interface NumberInterface
 {
-    public function getNative(): int;
+    public function equals(self $number): bool;
+    public function identical(self $number): bool;
+    public function __toString(): string;
+    public function native(): int;
     public function greaterThan(self $number): bool;
     public function lowerThan(self $number):bool;
 }

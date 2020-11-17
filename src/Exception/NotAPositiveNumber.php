@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ObjectValues\Integer\Exception;
+namespace ObjectValues\Exception;
 
 use InvalidArgumentException;
 

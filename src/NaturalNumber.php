@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace ObjectValues;
 
-use ObjectValues\Integer\Exception\NullNotAllowedException;
-use ObjectValues\Integer\PositiveNumber;
+use ObjectValues\Exception\NullNotAllowedException;
 
 class NaturalNumber extends PositiveNumber
 {

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace ObjectValues;
 
@@ -16,25 +16,6 @@ class Integer implements NumberInterface
     public static function create(int $integer): self
     {
         return new Integer($integer);
-    }
-
-    public function notEquals(NumberInterface $valueObject): bool
-    {
-        return false === $this->equals($valueObject);
-    }
-
-    public function equals(NumberInterface $valueObject): bool
-    {
-        if (false === $valueObject instanceof self) {
-            return false;
-        }
-
-        return $this->native() === $valueObject->native();
-    }
-
-    public function native(): int
-    {
-        return $this->integer;
     }
 
     public function __toString(): string
@@ -54,11 +35,20 @@ class Integer implements NumberInterface
 
     public function identical(NumberInterface $number): bool
     {
-        if(false === $number instanceof self)
-        {
+        if (false === $number instanceof self) {
             return false;
         }
 
         return $this->equals($number);
+    }
+
+    public function equals(NumberInterface $valueObject): bool
+    {
+        return $this->native() === $valueObject->native();
+    }
+
+    public function native(): int
+    {
+        return $this->integer;
     }
 }

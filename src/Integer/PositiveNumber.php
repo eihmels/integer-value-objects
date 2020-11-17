@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace ObjectValues\Integer;
 
@@ -11,9 +11,9 @@ class PositiveNumber extends Integer
     public static function create(int $integer): self
     {
         if (0 > $integer) {
-            throw NotAPositiveNumber::NotANaturalNumberException($integer);
+            throw NotAPositiveNumber::notANaturalNumberException($integer);
         }
 
-       return new self($integer);
+        return new self($integer);
     }
 }

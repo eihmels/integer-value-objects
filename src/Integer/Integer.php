@@ -1,9 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace ObjectValues\Integer;
 
+use ObjectValues\NumberInterface;
 use ObjectValues\ValueObjectInterface;
 
 class Integer implements NumberInterface

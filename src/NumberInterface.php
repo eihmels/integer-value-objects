@@ -1,10 +1,8 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace ObjectValues\Integer;
-
-use ObjectValues\ValueObjectInterface;
+namespace ObjectValues;
 
 interface NumberInterface extends ValueObjectInterface
 {

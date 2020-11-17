@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace ObjectValues;
-
 
 use ObjectValues\Exception\NotANaturalNumberException;
 

@@ -5,6 +5,13 @@ inspired by https://martinfowler.com/bliki/ValueObject.html
 In this Package there are a bunch of Integer Value Objects with some validations.
 you can inherit this base Values to adapt it to your wishes.
 
+## Install
+
+```
+    composer require eihmels/integer-value-objects
+
+```
+
 ## ValueObjects
 
 all Value Objects Inherite from NumberInterface. In this Interface are some basic functions defined.
@@ -15,10 +22,8 @@ You are not allowed to change the values after initializing.
 ### Basic Integer
 src/Integer.php
 
-
-
 example: 
-```
+```php
     $one = Integer:create(1);
 ```
 
@@ -28,14 +33,14 @@ src/NaturalNumber.php
 A natural Number is a Positive Integer.
 
 example:
-```
+```php
     $one = NaturalNumber:create(1);
 ```
 
 0 isn't a valid NaturalNumber. if you define 0 to natural numbers use NaturalNumbersWithNull.
 
 example:
-```
+```php
     $null = NaturalNumberWithNull:create(0);
 ```
 

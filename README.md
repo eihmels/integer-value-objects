@@ -36,7 +36,7 @@ example:
 
 example:
 ```
-    $one = NaturalNumberWithNull:create(0);
+    $null = NaturalNumberWithNull:create(0);
 ```
 
 ## Codequality Tools

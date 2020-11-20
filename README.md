@@ -32,7 +32,7 @@ example:
     $one = NaturalNumber:create(1);
 ```
 
-0 isn't a valid NaturalNumber, so a create with 0 will fail. if you define 0 to your natural numbers use NaturalNumbersWithNull
+0 isn't a valid NaturalNumber. if you define 0 to natural numbers use NaturalNumbersWithNull.
 
 example:
 ```

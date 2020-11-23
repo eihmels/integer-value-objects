@@ -48,10 +48,10 @@ final class IntegerTest extends TestCase
     public function testToString(): void
     {
         $number = Integer::create(1);
-        $this->assertEquals('1', (string) $number);
+        self::assertEquals('1', (string) $number);
     }
 
-    public function equalsResult(): array
+    public static function equalsResult(): array
     {
         return [
             [
@@ -72,7 +72,7 @@ final class IntegerTest extends TestCase
         ];
     }
 
-    public function greaterLowerResult(): array
+    public static function greaterLowerResult(): array
     {
         return [
             [
@@ -93,7 +93,7 @@ final class IntegerTest extends TestCase
         ];
     }
 
-    public function validIntegers(): array
+    public static function validIntegers(): array
     {
         return [[1], [-1]];
     }

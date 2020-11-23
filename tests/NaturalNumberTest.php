@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Integer;
 
-use ObjectValues\Exception\NotANaturalNumberException;
+use Assert\InvalidArgumentException;
 use ObjectValues\Integer;
 use ObjectValues\NaturalNumber;
 use PHPUnit\Framework\TestCase;
@@ -32,8 +32,8 @@ final class NaturalNumberTest extends TestCase
     public function testCreateNegativeNumber(): void
     {
 
-        $this->expectException(NotANaturalNumberException::class);
-        $this->expectErrorMessage(NotANaturalNumberException::notANaturalNumberException(-1)->getMessage());
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Provided "-1" is not greater or equal than "0".');
         NaturalNumber::create(-1);
     }
 }

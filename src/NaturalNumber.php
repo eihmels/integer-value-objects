@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace ObjectValues;
 
-use ObjectValues\Exception\NotANaturalNumberException;
+use Assert\Assertion;
 
 class NaturalNumber extends Integer
 {
     public static function create(int $integer): self
     {
-        if (0 > $integer) {
-            throw NotANaturalNumberException::notANaturalNumberException($integer);
-        }
+        Assertion::greaterOrEqualThan($integer, 0);
 
         return new self($integer);
     }

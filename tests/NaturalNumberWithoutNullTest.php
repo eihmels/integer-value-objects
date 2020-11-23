@@ -4,21 +4,23 @@ declare(strict_types=1);
 
 namespace Tests\Integer;
 
-use ObjectValues\Exception\NotANaturalNumberException;
+use Assert\InvalidArgumentException;
 use ObjectValues\NaturalNumberWithoutNull;
 use PHPUnit\Framework\TestCase;
 
-class NaturalNumberWithoutNullTest extends TestCase
+final class NaturalNumberWithoutNullTest extends TestCase
 {
     public function testCreateNotAllowedNullNumber(): void
     {
-        $this->expectErrorMessage(NotANaturalNumberException::nullNotAllowedException()->getMessage());
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectErrorMessage('Value "0" was not expected to be equal to value "0".');
         NaturalNumberWithoutNull::create(0);
     }
 
     public function testCreateNegativeNumber(): void
     {
-        $this->expectErrorMessage(NotANaturalNumberException::notANaturalNumberException(-1)->getMessage());
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Provided "-1" is not greater or equal than "0".');
         NaturalNumberWithoutNull::create(-1);
     }
 
